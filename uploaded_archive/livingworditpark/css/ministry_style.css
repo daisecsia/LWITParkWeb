@@ -1,0 +1,94 @@
+/*----- Tabs -----*/
+.tabs {
+    width:100%;
+    display:block;
+    overflow: hidden;
+}
+ 
+/*----- Tab Links -----*/
+/* Clearfix */
+.tab-links:after {
+    display:block;
+    clear:both;
+    content:'';
+    }
+ 
+    .tab-links li {
+        margin:0px 1px 0px 0px;
+        float:left;
+        list-style:none;
+        border: 1px solid #fff;
+    }
+
+        .tab-links a {
+            padding:9px 15px;
+            display:inline-block;
+            border-radius:3px 3px 0px 0px;
+            background:#487cae;
+            font-size:16px;
+            font-weight:600;
+            color:#fff;
+            transition:all linear 0.15s;
+        }
+ 
+        .tab-links a:hover {
+            background:#a7cce5;
+            text-decoration:none;
+        }
+ 
+    li.active a, li.active a:hover {
+        background:#fff;
+        color:#293342;
+    }
+ 
+    /*----- Content of Tabs -----*/
+    .tab-content {
+        padding:10px;
+        border-radius:3px;
+        box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+		background: #fff;
+    }
+ 
+        .tab {
+            display:none;
+        }
+ 
+        .tab.active {
+            display:block;
+        }
+
+.ushering{
+	padding: 5px;
+	background: -webkit-linear-gradient(#758a3d, #ecf6d0); /* For Safari 5.1 to 6.0 */
+ 	background: -o-linear-gradient(#758a3d, #ecf6d0); /* For Opera 11.1 to 12.0 */
+  	background: -moz-linear-gradient(#758a3d, #ecf6d0); /* For Firefox 3.6 to 15 */
+  	background: linear-gradient(#758a3d, #ecf6d0); /* Standard syntax */
+  	overflow: hidden;
+}
+	
+	.ushering p, .ushering h3{
+		padding: 10px;
+		font-size: 13px;
+		color: #293342;
+	}
+
+	.usher_service{
+		width: 28%;
+		padding: 5px 20px;
+		float: left;
+		text-align: center;
+	}
+	
+		.food_service, .greeters, .physical_arrange{
+			margin: 0px auto;
+			height: 100px;
+			width: 100px;
+		}
+		.food_service{background: url('../images/ministry/usher_serve1.png') no-repeat;}
+		.greeters{background: url('../images/ministry/usher_serve2.png') no-repeat;}
+		.physical_arrange{background: url('../images/ministry/usher_serve3.png') no-repeat;}
+		
+#children{
+	padding: 10 160px 5px 5px;
+	background: #d4f0fe url('../images/ministry/kids_bgnd.png') no-repeat;
+}
