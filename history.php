@@ -11,9 +11,9 @@ include_once('header_page.php');
 		})
 	}); 
 </script>
-<div style="background: url('images/history_banner.jpg') no-repeat; height: 150px; opacity: 1"></div>
+<div style="background: url('images/page_banner/history_banner.jpg') no-repeat;  background-size: 100%; height: 200px; opacity: 1"></div>
 <div class="page_wrapper">
-<div style="background: #8F9AAA; width: 900px; margin: 0px auto;"><!-- 8F9AAA -->
+<div style="background: #8F9AAA; margin: 0px auto;"><!-- 8F9AAA -->
 <div id="timeline">
 		<ul id="dates">
 			<li><a href="#2007">2007</a></li>

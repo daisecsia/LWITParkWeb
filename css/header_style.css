@@ -28,10 +28,10 @@
     background:-o-linear-gradient(top, #f7f7f7, #f4f4f4);
     background:linear-gradient(to bottom, #f7f7f7, #f4f4f4);
     background-clip:padding-box;
-    border-radius:0 0 5px 5px;
+    /*border-radius:0 0 5px 5px;*/
     margin: auto;
     position: relative;
-    width: 1000px;
+    /*width: 1000px;*/
 }
 #header a {
     color: #4C9FEB;
@@ -79,7 +79,7 @@ nav{
     background: -moz-linear-gradient(#f6f6f6, #e9eaea) repeat scroll 0 0 transparent;
     background: linear-gradient(#f6f6f6, #e9eaea) repeat scroll 0 0 transparent;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#e9eaea',GradientType=0 );
-    border-radius: 0 0 4px 4px;
+    /*border-radius: 0 0 4px 4px;*/
     border-top: 1px solid #D1D1D1;
     box-shadow: -1px 1px 0 rgba(255, 255, 255, 0.8) inset;
     clear: both;
@@ -101,7 +101,7 @@ nav{
 }
 #menu > ul > li {
     float: left;
-    padding-bottom: 12px;
+    /*padding-bottom: 12px;*/
 }
 
 #menu ul li ul li a{
@@ -146,7 +146,7 @@ nav{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499FEE', endColorstr='#3F96E5',GradientType=0 );
 }
 #menu > ul > li:first-child > a {
-    border-radius: 0 0 0 5px;
+    /*border-radius: 0 0 0 5px;*/
 }
 
 /* dropdown menu */
@@ -261,6 +261,7 @@ nav{
     color: #C4C4C4;
 }
 
+/*
 @media screen and (max-width: 300px) {
 	#error-msg{
 		font-family: "Arial";
@@ -270,7 +271,6 @@ nav{
 		margin: 10px 0px;
 	}
 	
-	/* header styles */
 	#greeting{
 		font-family: "MS Sans Serif", Geneva, sans-serif;
 		color: #FF7D4C;
@@ -332,7 +332,7 @@ nav{
 	    border-width: 0;
 	}
 	
-	/* navigation menu styles */
+	/* navigation menu styles
 	nav{
 	    font-family: "MS Sans Serif", Geneva, sans-serif;
 	
@@ -412,7 +412,7 @@ nav{
 	    border-radius: 0 0 0 5px;
 	}
 	
-	/* dropdown menu */
+	/* dropdown menu
 	#menu ul ul {
 	    background: -webkit-linear-gradient(#F7F7F7, #F4F4F4) repeat scroll 0 0 padding-box transparent;
 	    background: -moz-linear-gradient(#F7F7F7, #F4F4F4) repeat scroll 0 0 padding-box transparent;
@@ -468,7 +468,7 @@ nav{
 	    margin-right: 10px;
 	    width: 24px;
 	}
-	/* menu icons */
+	/* menu icons
 	#menu ul ul a .icon.history {background-image: url("../images/menu_icons/history_icon.png");}
 	#menu ul ul a .icon.mvision {background-image: url("../images/menu_icons/mv_icon.png");}
 	#menu ul ul a .icon.faith_believe {background-image: url("../images/menu_icons/jesus_cross_icon.png");}
@@ -490,7 +490,7 @@ nav{
 	#menu ul ul a .icon.feedback {background-image: url("../images/menu_icons/feedback_icon.png");}
 	#menu ul ul a .icon.schedule {background-image: url("../images/menu_icons/calendar_icon.png");}
 	
-	/* search bar */
+	/* search bar
 	#search {
 	    margin:13px 10px 0 0;
 	    float: right;

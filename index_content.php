@@ -87,7 +87,7 @@
                 </div>
             </div>
             <!-- Slides Container -->
-            <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 960px;
+            <div u="slides" class="slides_container" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 3000px;
                 height: 500px; overflow: hidden;">
                 <div>
                     <div style="position: absolute; width: 480px; height: 300px; top: 10px; left: 10px;
