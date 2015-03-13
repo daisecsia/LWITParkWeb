@@ -4,9 +4,9 @@
 }
 
 #timeline {
-	width: 800px;
+	width: 1000px;
 	overflow: hidden;
-	margin: 50px auto;
+	margin: 0px auto;
 	position: relative;
 	background: url('../images/timeline/dot.gif') left 45px repeat-x;
 }
@@ -60,12 +60,11 @@
 	
 	#issues {
 		width: 800px;
-		height: 350px;
+		margin-bottom: 20px;
 		overflow: hidden;
 	}	
 		#issues li {
-			width: 800px;
-			height: 350px;
+			width: 1000px;
 			list-style: none;
 			float: left;
 		}
@@ -104,7 +103,6 @@
 			#issues li p {
 				color: #ffffff;
 				font-size: 14px;
-				margin-right: 70px;
 				font-weight: normal;
 				line-height: 22px;
 			}

@@ -101,6 +101,10 @@ include_once('header_page.php');
 		float: left;
 	}
 	
+	.event_photo{
+		width: 500px;
+		margin: 0px auto;
+	}
 	.event_description{
 		float: left;
 	}
@@ -126,12 +130,14 @@ include_once('header_page.php');
 	}
 
 </style>
+<!-- <div style="background: url('images/page_banner/BannerOurChurch.jpg') no-repeat;  background-size: 100%; height: 200px; opacity: 1"></div> -->
 <div class="page_wrapper">
 		<div class = "event_countdown_box">
 			<h3 style="margin: 7px;">Next Event:</h3>
 			<?php
 				$result = dbc_query_all("select * from events WHERE date_start > NOW() ORDER BY date_start LIMIT 1");
 			?>
+			<div class= "event_photo"><img src='<?php echo $result[0]['event_photo']; ?>' height="250" width="500" /></div>
 			<div class = "event_title"><h2><?php echo $result[0]['event_name'] . ($result[0]['event_theme'] != '' ? ": " .$result[0]['event_theme'] : ''); ?></h2></div>
 			<div>
 				<div class="counter_box">

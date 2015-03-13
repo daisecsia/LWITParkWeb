@@ -82,8 +82,7 @@ body{
 }
 
 .scroll {
-	width: 320px;
-    overflow-y: scroll;
+    overflow: hidden;
     padding-top: 10px;
 }
 	

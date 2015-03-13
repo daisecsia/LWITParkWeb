@@ -22,8 +22,8 @@
                 <li <?php echo $menu_id == 'about' ? "class='active'" : ""; ?>><a href="" title="know more about us">About Us</a>
                     <ul class="menu_about">
                         <li><a href="history.php" title="know our history"><span class="icon history"></span>History</a></li>
-                        <li><a href="about.php" title="why we exist"><span class="icon mvision"></span>Mission Vision</a></li>
-                        <li><a href="about.php#belief" title="statement of faith"><span class="icon faith_believe"></span>What We Believe</a></li>
+                        <li><a href="about.php" title="why we exist"><span class="icon faith_believe"></span>Who We Are</a></li>
+                        <li style="display: none;"><a href="about.php#belief" title="statement of faith"><span class="icon faith_believe"></span>What We Believe</a></li>
                         <li style="display: none;"><a href=""><span class="icon leadership"></span>Leadership</a></li>
                         <li><a href="contact.php" title="get in touch with us"><span class="icon contact"></span>Contact Us</a></li>
                     </ul>

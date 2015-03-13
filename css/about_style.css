@@ -1,29 +1,50 @@
 #about, #belief{
 	width: inherit;
 	overflow: hidden;
+	background: #dadada; 
 }
 
 .vmg{
 	float:left; 
-	width: 310px; 
+	width: 300px; 
 	overflow: hidden; 
-	background: url('../images/paper.png') repeat;
+	background: #dadada; /*url('../images/pastel_green.jpg') repeat;*/
+	border-radius: 5px;
 }
 
 .vmg_content{
-	float: left; 
-	width: 300px; 
-	margin: 10px;
+	width: 250px; 
+	margin: 20px auto;
 }
 
 .about_intro{
-	width: 600px;
+	width: 950px;
+	background: #dadada;
 }
+
+.core_values{
+	margin: 15px;
+}
+
+.core_img{
+	width: 150px;
+	height: 180px;
+	margin: 10px;	
+	float: left;
+}
+
+.core_img.core1{background: url('../images/about_lwit/core1.png') no-repeat; background-size: 100%;}
+.core_img.core2{background: url('../images/about_lwit/core2.png') no-repeat; background-size: 100%;}
+.core_img.core3{background: url('../images/about_lwit/core3.png') no-repeat; background-size: 100%;}
+.core_img.core4{background: url('../images/about_lwit/core4.png') no-repeat; background-size: 100%;}
+.core_img.core5{background: url('../images/about_lwit/core5.png') no-repeat; background-size: 100%;}
 
 .about_list{
 	float: left;
 }
-	.service_1{
+
+
+.service_1{
 		background: url('../images/woodencross.png') no-repeat;
 		width: 75px;
 		height: 100px;
