@@ -471,6 +471,9 @@ function form_content()
 						</dl>
 					</form>
 				</div>
+				<div>
+					<a href='<?php echo $_SERVER['HTTP_REFERER']; ?>'><div class='prev_sermon' style='background-size: 30px 30px; float: right; padding-right: 25px;'><h3 style='padding: 5px 35px; color: #31424d'>BACK</h3></div></a>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -264,7 +264,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 	}
 }
 ?>
-<div style="background: url('images/BannerPodcast.jpg') no-repeat; height: 150px; opacity: 1"></div>
+<div style="background: url('images/page_banner/BannerPodcast.jpg') no-repeat; background-size: 100%; height: 200px; opacity: 1"></div>
 <div class="page_wrapper">
 	<div class="upload_box">
 		<h1>Upload Sermon</h1>

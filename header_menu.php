@@ -30,12 +30,10 @@
                 </li>
                 <li <?php echo $menu_id == 'schedule' ? "class='active'" : ""; ?>><a href="schedule.php">Events</a></li>
                 <li <?php echo $menu_id == 'involve' ? "class='active'" : ""; ?>><a href="">Get Involved</a>
-                    <ul>
+                    <ul class="menu_involve">
                         <li><a href="ministry.php" title="serve with us"><span class="icon ministry"></span>Ministry List</a></li>
                         <li><a href="small_group.php" title="grow with us"><span class="icon small_group"></span>Small Groups</a></li>
-                        <li><a href="#"><span class="icon heart"></span>Outreaches</a></li>
                         <li><a href="schedule.php"><span class="icon activities"></span>Activities</a></li>
-                        <li><a href="#"><span class="icon help"></span>Volunteer Full-time</a></li>
                     </ul>
                 </li>
                 <li <?php echo $menu_id == 'resources' ? "class='active'" : ""; ?>><a href="#">Resources</a>

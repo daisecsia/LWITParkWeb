@@ -2,7 +2,7 @@
 $menu_id = "admin";
 $page_title = "Listen to Audio Sermons";
 include_once('header_page.php');
-$limit = 3;
+$limit = 4;
 $page_no = get('page', 10)=='' ? 0: get('page',10) ;
 $order_by = get('sort_by',10)=='' ? 'date' : get('sort_by',10);
 $start = $page_no * $limit;
@@ -13,7 +13,7 @@ else
 	$order_by_clause = "{$order_by} ASC ";
 
 ?>
-<div style="background: url('images/BannerPodcast.jpg') no-repeat; height: 150px; opacity: 1"></div>
+<div style="background: url('images/page_banner/BannerPodcast.jpg') no-repeat; background-size: 100%; height: 200px; opacity: 1"></div>
 <div class="page_wrapper">
 	<h3 style="font-size: 1.5em; padding-bottom: 10px;">Latest Sermon</h3>
 	<div style="width: 500px; margin: 0px auto;">

@@ -29,9 +29,10 @@ function get_article()
 }
 ?>
 <div class="page_wrapper">
-	<div style="width: 975px; margin: auto; overflow: hidden;">
+	<div style="overflow: hidden;">
 		<div style="float: left; width: 320px; margin: 0px auto;overflow: hidden;">
 			<?php
+
 			if($article_id =='0' || $article_content == '')
 				$side_bar = "<img src='images/article_2.png' height='100px' style='width: 320px; margin: 0px auto;' />
 							<p style='font-family: Tahoma; letter-spacing: 0.25px; font-stretch: semi-expanded; font-size: 12px; font-style: italic; padding: 20px 5px; text-align: center; color: #FFFFFF; background: #31424d'>

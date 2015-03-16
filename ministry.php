@@ -4,7 +4,7 @@ $page_title = "Serve Opportunities";
 include_once('header_page.php');
 ?>
 
-<div style="background: url('images/BannerGetPluggedIn.png') no-repeat; height: 150px; opacity: 1"></div>
+<div style="background: url('images/page_banner/BannerGetPluggedIn.png') no-repeat; background-size: 100%; height: 200px; opacity: 1"></div>
 <div class="page_wrapper">
 	<div class="tabs">
 	    <ul class="tab-links">
@@ -19,7 +19,7 @@ include_once('header_page.php');
 	 
 	    <div class="tab-content">
 	        <div id="ushering" class="tab active ushering">
-	        	<img src="images/BannerUshering.jpg" width="930px" />
+	        	<img src="images/page_banner/BannerUshering.jpg" width="1280" />
 				<p style="font-size: 15px;">The ushers, with their warm smiles, affectionate greetings, and friendly handshakes, are the people who welcome you to church, guide you where to sit, give handouts, assist new comers, and take care of after-service inquiries creating an atmosphere of warmth and acceptance. They also do the physical arrangement of the chairs and other fixtures, monitoring the air conditioning, and manning the information booth.</p><br />
 				<div style="width: 500px; margin: 0px auto; height: 320px; background: url('images/ministry/ushers.png') no-repeat;">
 				</div>

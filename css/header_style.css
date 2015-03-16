@@ -180,6 +180,10 @@ nav{
     visibility: visible;
 }
 
+#menu ul li:hover .menu_involve{
+	height: 118px;
+}
+
 #menu ul li:hover .menu_about{
 	height: 118px;
 }

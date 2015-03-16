@@ -102,7 +102,7 @@ function showButton($sg)
 	return $button;
 }
 ?>
-<div style="background: url('images/BannerGetPluggedIn.png') no-repeat; height: 150px; opacity: 1"></div>
+<div style="background: url('images/page_banner/BannerGetPluggedIn.png') no-repeat; background-size: 100%; height: 200px; opacity: 1"></div>
 <div class="page_wrapper">
 	<h1>SMALL GROUPS</h1>
 	<div class = "sg">
