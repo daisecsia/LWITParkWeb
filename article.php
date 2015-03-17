@@ -11,7 +11,7 @@ else
 	foreach($result as $article_result){}
 	try
 	{
-		$article_content = file_get_contents('D:/PHPDev/livingworditpark/articles/'.str_replace("?", '', $article_result['title']).'.txt');
+		$article_content = file_get_contents(ROOT_DATA .'/articles/'.str_replace("?", '', $article_result['title']).'.txt');
 	}
 	catch (Exception $e)
 	{

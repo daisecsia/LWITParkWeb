@@ -2,16 +2,28 @@
 /*
  * define constant variables
  */
- $development = true;
-define('DBC_HOST','localhost');//temporary
-define('DBC_USER','root');
-define('DBC_PASSWORD','');
-define('DBC_NAME','livingworditpark');
-if($development)
-	define('ROOT_DATA','D:/PHPDev/livingworditpark/data/');
-else
+require_once('setup_inc.php');
+$status = getstatus();
+if($status == "development")
+{
+	define('DBC_HOST','localhost');
+	define('DBC_USER','root');
+	define('DBC_PASSWORD','');
+	define('DBC_NAME','livingworditpark');
+	define('ROOT_DATA','D:/PHPDev/LWITParkWeb/data/');
+}
+else if($status == "testing") //via hostinger
+{
+	define('DBC_HOST','mysql.hostinger.ph');
+	define('DBC_USER','u449400421_sysad');
+	define('DBC_PASSWORD','systemadmin');
+	define('DBC_NAME','u449400421_lwit');
 	define('ROOT_DATA','/data');
-
+}
+else
+{
+	
+}
 /*
  * make database connection
  */
