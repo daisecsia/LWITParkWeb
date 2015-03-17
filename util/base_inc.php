@@ -1,7 +1,9 @@
 <?php
-
-define('CONST_SERVER_TIMEZONE', 'UTC');/* server timezone */
-define('CONST_SERVER_DATEFORMAT', "Y-m-d h:i:s");/* server dateformat */
+/* server timezone */
+define('CONST_SERVER_TIMEZONE', 'UTC');
+ 
+/* server dateformat */
+define('CONST_SERVER_DATEFORMAT', "Y-m-d h:i:s");
 
 /**
  * Converts current time for given timezone (considering DST)
@@ -30,6 +32,4 @@ function now($str_user_timezone,
  
   return $str_server_now;
 }
-
-define('ROOT_DIR', $_SERVER['DOCUMENT_ROOT']);
 ?>
