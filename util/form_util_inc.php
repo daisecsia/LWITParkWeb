@@ -54,7 +54,7 @@ class Field
 		return $this->field[$pointer]['error_msg'];
 	}
 	
-	function error_condition($pointer, $condition, $message)
+	function error_condition($pointer, $condition, $message, &$error = NULL)
 	{
 		if(!isset($_POST[$pointer])) return false;
 		if($condition)
@@ -66,7 +66,7 @@ class Field
 		else return false;
 	}
 	
-	function error_checkbox($pointer, $message)
+	function error_checkbox($pointer, $messag, &$error = NULL)
 	{
 		if(!isset($_POST[$pointer]))
 		{
@@ -81,7 +81,7 @@ class Field
 		}
 	}
 	
-	function error_empty($pointer, $message)
+	function error_empty($pointer, $message, &$error = NULL)
 	{
 		if(!isset($_POST[$pointer])) return false;
 		
@@ -124,7 +124,7 @@ class Field
 		else return false;
 	}
 	
-	function error_phone($pointer, $message)
+	function error_phone($pointer, $message, &$error = NULL)
 	{
 		if(!isset($_POST[$pointer])) return false;
 		$this->field[$pointer]['value'] = trim($_POST[$pointer]);
@@ -138,7 +138,7 @@ class Field
 		}
 	}
 	
-	function error_email($pointer, $message)
+	function error_email($pointer, $message, &$error = NULL)
 	{
 		if(!isset($_POST[$pointer])) return false;
 		$this->field[$pointer]['value'] = trim($_POST[$pointer]);
@@ -152,7 +152,7 @@ class Field
 		else return false;
 	}
 	
-	function error_password($pointer, $message=null)
+	function error_password($pointer, $message, &$error = NULL)
 	{
 		if(!isset($_POST[$pointer])) return false;
 		$this->field[$pointer]['value'] = trim($_POST[$pointer]);
@@ -187,7 +187,7 @@ class Field
 		}
 	}
 	
-	function is_exist($pointer, $table, $column, $message)
+	function is_exist($pointer, $table, $column, $message, &$error = NULL)
 	{
 		if(!isset($_POST[$pointer])) return false;
 		$this->field[$pointer]['value'] = trim($_POST[$pointer]);

@@ -13,5 +13,8 @@ function page_lookup($table, $column, $filter=null)
 	dbc_query_all($sql);
 }
 
-
+function redirect($page)
+{
+	header("location: $page");
+}
 ?>

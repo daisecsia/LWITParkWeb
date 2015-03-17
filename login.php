@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 	$error=0;
 	if(!$loginfield->error_empty('username', 'Please provide username.'))
 	{
-		$result = dbc_query_all("SELECT * FROM user WHERE username='{$loginfield->value('username')}' AND access_right != 0");
+		$result = dbc_query_all("SELECT username FROM user WHERE username='{$loginfield->value('username')}' AND access_right != 0");
 		if(!$result)
 		{
 			$loginfield->error_condition('username',true, 'Invalid username.');
@@ -21,19 +21,29 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 	}
 	if(!$loginfield->error_empty('password', 'Please provide password.'))
 	{
-		$result = dbc_query_all("SELECT * FROM user WHERE password='{$loginfield->value('password')}' AND access_right != 0");
-		if(!$result)
-			$loginfield->error_condition('password',true, 'Incorrect password.');
-		else
+		$result = dbc_query_all("SELECT username, password FROM user WHERE username = '{$loginfield->value('username')}' AND access_right != 0");
+		$match = 0;
+		
+		foreach($result as $user)
 		{
-			foreach($result as $user)
-				$loginfield->error_condition('password', $user['username']!=$loginfield->value('username'),'Username and password don\'t match.');
+			$currentPassword = $user['password'];
+			if(crypt($loginfield->value('password'), '$2a$15$Ku2hb./9aA71tPo/E015h.$') === $currentPassword)
+			{
+				$match = 1;
+				break;
+			}
 		}
+		$loginfield->error_condition('password',!$match, 'Incorrect password.', $error);
 	}
-	
 	if(!$error)
 	{
-		
+		$password = crypt($loginfield->value('password'), '$2a$15$Ku2hb./9aA71tPo/E015h.$');
+		session_start();
+		$user_info = dbc_query_all("SELECT * FROM user WHERE username = '{$loginfield->value('username')}' and password = '{$password}'");
+		$_SESSION['login'] = 1;
+		$_SESSION['login_user'] = $user_info[0]['username'];
+		$_SESSION['access_right'] = $user_info[0]['access_right'];
+		redirect('index.php');
 	}
 }
 

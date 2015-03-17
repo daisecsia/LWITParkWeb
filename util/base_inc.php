@@ -3,7 +3,7 @@
 define('CONST_SERVER_TIMEZONE', 'UTC');
  
 /* server dateformat */
-define('CONST_SERVER_DATEFORMAT', 'YmdHis');
+define('CONST_SERVER_DATEFORMAT', "Y-m-d h:i:s");
 
 /**
  * Converts current time for given timezone (considering DST)

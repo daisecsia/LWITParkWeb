@@ -1,6 +1,7 @@
 <?php
 $page_title = "Login";
 include_once('header_page.php');
+include_once('util/base_inc.php');
 ?>
 <style>
 	dt{
@@ -53,104 +54,82 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 {
 	if(isset($_POST['signup']))
 	{
-		$has_error = false;
-		//die();
+		$error = false;
 		//username
-		if(!$field->error_empty('username', '<br /> empty username<br />'))
+		if(!$field->error_empty('username', '<br /> empty username<br />', $error))
 		{
-			if($field->is_exist('username', 'user', 'username', 'username already exists')) 
-				$has_error = true;
+			$field->is_exist('username', 'user', 'username', 'username already exists', $error); 
 		}
-		else $has_error = true;
 		
 		//email-ad
-		if(!$field->error_empty('u_email', '<br /> empty email add<br />'))
+		if(!$field->error_empty('u_email', '<br /> empty email add<br />', $error))
 		{
-			if(!$field->is_exist('u_email', 'user', 'username', 'email already exists'))
-			{
-				if($field->error_email('u_email','<br /> invalid email add<br />'))
-					$has_error = true;
-			}
-			else $has_error = true;
+			if(!$field->is_exist('u_email', 'user', 'username', 'email already exists', $error))
+				if($field->error_email('u_email','<br /> invalid email add<br />', $error));
 		}
-		else $has_error = true;
 		
 		//password
-		if(!$field->error_empty('password', '<br /> empty password<br />'))
-		{
-			if($field->error_password('password', '<br /> password must comply following rules: <br />
+		if(!$field->error_empty('password', '<br /> empty password<br />', $error))
+			$field->error_password('password', '<br /> password must comply following rules: <br />
 														- must contain digit from 1-9 <br />
 														- must contain one lowercase <br />
 														- must contain one uppercase <br />
 														- must contain one special symbol in the list @#$%_! <br />
 														- length must be 6-8 <br />'
-									))
-				$has_error = true;
-		}
-		else $has_error = true;
-		
+									, $error
+									);
 		//name
-		if($field->error_empty('lname', '<br /> please supply last name<br />')) 
-			$has_error = true;
-		if($field->error_empty('fname', '<br /> please supply first name<br />')) 
-			$has_error = true;
+		$field->error_empty('lname', '<br /> please supply last name<br />', $error);
+		$field->error_empty('fname', '<br /> please supply first name<br />', $error);
 		
 		//contact info
-		if(!$field->error_empty('u_contact', '<br /> please provide us with your contact number<br />'))
-		{
-			if($field->error_phone('u_contact', '<br /> sorry, i don\'t recognize that phone format. <br />')) 
-				$has_error = true;
-		}
-		else $has_error = true;
+		if(!$field->error_empty('u_contact', '<br /> please provide us with your contact number<br />', $error))
+			$field->error_phone('u_contact', '<br /> sorry, i don\'t recognize that phone format. <br />', $error);
 		
 		//gender
-		if($field->error_empty('gender', '<br /> please select gender<br />')) 
-			$has_error = true;
+		$field->error_empty('gender', '<br /> please select gender<br />', $error);
 		
 		//small group
-		if($field->error_checkbox('small_group', '<br /> please let us know if you already have small group or not<br />')) 
-			$has_error = true;
+		$field->error_checkbox('small_group', '<br /> please let us know if you already have small group or not<br />', $error);
 		
 		//small group listbox
 		if($field->value('small_group')=='true')
 		{
-			if(!$field->error_empty('sg_list', '<br /> please select small group<br />'))
-			{
-				if($field->error_condition('sg_list',$field->value('sg_list')=='X', '<br /> please select small group<br />')) 
-					$has_error = true;
-			}
-			else $has_error = true;
+			if(!$field->error_empty('sg_list', '<br /> please select small group<br />', $error))
+				$field->error_condition('sg_list',$field->value('sg_list')=='X', '<br /> please select small group<br />', $error);
 		}
 		
 		if($field->value('small_group')=='false')
 		{
-			if(!$field->error_empty('age', '<br /> age empty<br />'))
-			{
-				if($field->error_int('age', '<br /> invalid number format<br />')) 
-					$has_error = true;
-			}
-			else $has_error = true;
+			if(!$field->error_empty('age', '<br /> age empty<br />', $error))
+				$field->error_int('age', '<br /> invalid number format<br />', $error);
 		}
 		
-		if(!$has_error)
+		if(!$error)
 		{
-			$user_query = sprintf("INSERT INTO user (username, password, lastname, firstname, mobile, email_ad, has_sg, small_group_id, age)
-										VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %d)"
-									, $field->value('username')
-									, md5($field->value('password'))
-									, $field->value('lname')
-									, $field->value('fname')
-									, $field->value('u_contact')
-									, $field->value('u_email')
-									, $field->value('small_group')=='true' ? '1' : '0'
-									, $field->value('small_group')=='true' ? $field->value('sg_list') : 'X'
-									, $field->value('small_group')=='false' ? $field->value('age') : 0
+			$user_save = 0;
+			$query .= sprintf("INSERT INTO user (username, password, lastname, firstname, mobile, email_ad, sg_status, sg_id, ministry_status, ministry_id, age, access_right, lastlogin)
+								VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %d, '%s', '%s')"
+								, $field->value('username')
+								, crypt($field->value('password'), '$2a$15$Ku2hb./9aA71tPo/E015h.$')
+								, $field->value('lname')
+								, $field->value('fname')
+								, $field->value('u_contact')
+								, $field->value('u_email')
+								, $field->value('small_group')=='true' ? '1' : '0'
+								, $field->value('small_group')=='true' ? $field->value('sg_list') : 'X'
+								, '0'
+								, NULL
+								, $field->value('small_group')=='false' ? $field->value('age') : 0
+								, 1
+								, date("Y-m-d h:i:s",strtotime(now('Asia/Manila')))
 								);
-								
-			$subscribe_result = dbc_query("INSERT INTO subscription (email, subscribed_date) VALUES ('".$field->value('u_email')."','".date("Y-m-d")."')");
-			$user_save = dbc_query($user_query);
-			
-			if($user_save && $subscribe_result)
+
+			if(dbc_query($query))
+					$user_save=1;
+			//$subscribe_result = dbc_query("INSERT INTO subscription (email, subscribed_date) VALUES ('".$field->value('u_email')."','".date("Y-m-d")."')");
+			echo $user_save;
+			if($user_save)// && $subscribe_result)
 			{
 				$result_msg = "your account has been created. Start now";
 				echo "<script>
@@ -362,7 +341,7 @@ function form_content()
 								<label for='password'>Password:</label>
 							</dt>
 							<dd>
-								<input type='password' id= 'password' name='password' placeholder='Password' maxlength='10' value="<?php echo  $field->value('password');?>"/>
+								<input type='password' id= 'password' name='password' placeholder='Password' maxlength='30' value="<?php echo  $field->value('password');?>"/>
 							</dd><span id='error-msg'><?php echo $field->error_msg('password');?></span>
 						</dl>
 						<dl>
