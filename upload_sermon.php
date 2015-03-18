@@ -218,6 +218,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 	
 	if(!$error)
 	{
+		$field->post_value();
 		$photo_URL = mysql_real_escape_string($photo_dir);
 		$sermon_URL = mysql_real_escape_string($sermon_dir);
 		$note_URL = mysql_real_escape_string($note_dir);

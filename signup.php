@@ -107,6 +107,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 		
 		if(!$error)
 		{
+			$field->post_value();
 			$user_save = 0;
 			$query .= sprintf("INSERT INTO user (username, password, lastname, firstname, mobile, email_ad, sg_status, sg_id, ministry_status, ministry_id, age, access_right, lastlogin)
 								VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %d, '%s', '%s')"

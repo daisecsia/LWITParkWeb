@@ -2,11 +2,20 @@
 $menu_id = "admin";
 $page_title = "Listen to Audio Sermons";
 include_once('header_page.php');
+include_once('util/form_util_inc.php');
+
 $limit = 4;
 $page_no = get('page', 10)=='' ? 0: get('page',10) ;
 $order_by = get('sort_by',10)=='' ? 'date' : get('sort_by',10);
 $start = $page_no * $limit;
 
+$field = new field;
+$field->define_field('sort_by');
+
+if($_SERVER['REQUEST_METHOD']=='POST')
+{
+	$field->post_value();
+}
 if($order_by == 'date')
 	$order_by_clause = "{$order_by} DESC ";
 else
@@ -44,13 +53,13 @@ else
 		<div class='spacer'>
 			<div style="float: left;"><h3 style="font-size: 1.25em;">All Sermons</h3></div>
 			<div id="subscription" class="list_filter">
-				<form href="sermon_download.php" method="get">
+				<form href="sermon_download.php" method="post">
 					<dl>
 						<label for="sort_by">Sort by:</label>
 						<select name="sort_by" id="sort_by" size="1">
-							<option value="date" selected>Date</option>
-							<option value="speaker">Speaker</option>
-							<option value="title">Sermon Title</option>
+							<option value="date" <?php echo $field->value('sort_by')=='date' ? 'selected' : ''; ?>>Date</option>
+							<option value="speaker" <?php echo $field->value('sort_by')=='speaker' ? 'selected' : ''; ?>>Speaker</option>
+							<option value="title" <?php echo $field->value('sort_by')=='title' ? 'selected' : ''; ?>>Sermon Title</option>
 						</select>
 						<input type="submit" id="subscribe" value="GO" />
 					</dl>

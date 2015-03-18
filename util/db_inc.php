@@ -18,11 +18,15 @@ else if($status == "testing") //via hostinger
 	define('DBC_USER','u449400421_sysad');
 	define('DBC_PASSWORD','systemadmin');
 	define('DBC_NAME','u449400421_lwit');
-	define('ROOT_DATA','/data');
+	define('ROOT_DATA','/home/u449400421/data');
 }
 else
 {
-	
+	define('DBC_HOST','mysql.hostinger.ph');
+	define('DBC_USER','u449400421_sysad');
+	define('DBC_PASSWORD','systemadmin');
+	define('DBC_NAME','u449400421_lwit');
+	define('ROOT_DATA','/home/u449400421/data');
 }
 /*
  * make database connection

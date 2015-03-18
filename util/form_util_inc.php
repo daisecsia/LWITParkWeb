@@ -1,4 +1,5 @@
 <?php
+require_once('page_util_inc.php');
 /**
  * 
  */
@@ -211,6 +212,24 @@ class Field
 		if (!$this->error_anchor) $this->error_anchor = $pointer;
 		if (!$this->error_field) $this->error_field = $pointer;
 		$this->error = true;
+	}
+	
+	function post_value($i="")
+	{
+		foreach($this->field as $pointer=>$value)
+		{
+			if($this->is_Field_Date($pointer))
+			{
+				$post = post($pointer.$i, $this->field[$pointer]['max_length']);
+				$this->field[$pointer]['value']->set_from_user($post);
+			}
+			else
+			{
+				$this->field[$pointer]['value'] = post($pointer.$i, $this->field[$pointer]['max_length']);
+				if($this->field[$pointer]['format'] == '%f')
+					$this->field[$pointer]['value'] = strip_chars($this->field[$pointer]['value'], '$,');
+			}
+		}
 	}
 	
 }
