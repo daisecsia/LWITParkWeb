@@ -50,7 +50,7 @@
                 <?php
                 if($_SESSION['access_right']=='1')
 				{ ?>
-                <li <?php echo $menu_id == 'admin' ? "class='active'" : ""; ?>><a href="#">Admin</a>
+                <li <?php echo $menu_id == 'admin' ? "class='active'" : ""; ?>><a href="#">Admin Pages</a>
                 	<ul>
                         <li><a href="#"><span class="icon report"></span>Small Group Report</a></li>
                         <li><a href="#"><span class="icon announcement"></span>Announcement</a></li>

@@ -2,7 +2,7 @@
 /*
  * define constant variables
  */
-require_once('setup_inc.php');
+require_once('setup/setup_inc.php');
 $status = getstatus();
 if($status == "development")
 {
