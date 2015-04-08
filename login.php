@@ -89,7 +89,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 						<dd>
 							<div>
 								<div style="float: left;"><input name='signup' type="submit" value=" Submit "/></div>
-								<div style="float: left;"><a href="" ><p class="log_text" style="margin-left: 3px; font-size: 14px;">Reset Password</p></a></div>
+								<div style="float: left;"><a href="reset_password.php" ><p class="log_text" style="margin-left: 3px; font-size: 14px;">Reset Password</p></a></div>
 							</div>
 						</dd>
 						

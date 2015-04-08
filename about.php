@@ -3,6 +3,31 @@ $menu_id = "about";
 $page_title = "About Us";
 include_once('header_page.php');
 ?>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#core1").mouseover(function(){
+    $("#core1_desc").show();
+  });
+  $("#core1").mouseout(function(){
+    $("#core1_desc").hide();
+  });
+  $("#core2").mouseover(function(){
+    $("#core2_desc").show();
+  });
+  
+  $("#core3").mouseover(function(){
+    $("#core3_desc").show();
+  });
+  
+  $("#core4").mouseover(function(){
+    $("#core4_desc").show();
+  });
+  
+  $("#core5").mouseover(function(){
+    $("#core5_desc").show();
+  });
+});
+</script>
 <div style="background: url('images/page_banner/about_banner.png') no-repeat; background-size: 100%; height: 200px; opacity: 1"></div>
 <div class="page_wrapper">
 	<div id="about">
@@ -25,11 +50,40 @@ include_once('header_page.php');
 			<div class="core_values">
 				<img src="images/about_lwit/core_values.png"/><br />
 				<div>
-				<div class='core_img core1'></div>
-				<div class='core_img core2'></div>
-				<div class='core_img core3'></div>
-				<div class='core_img core4'></div>
-				<div class='core_img core5'></div>
+				<div id='core1' class='core_img core1'></div>
+				<div id='core2'  class='core_img core2'></div>
+				<div id='core3'  class='core_img core3'></div>
+				<div id='core4'  class='core_img core4'></div>
+				<div id='core5'  class='core_img core5'></div>
+				</div>
+			</div>
+			<div id="core1_desc" class="coredesc">
+				<div class="prayer"></div>
+			</div>
+			<div id="core2_desc">
+				<div></div>
+				<div></div>
+			</div>
+			<div id="core3_desc">
+				<div></div>
+				<div></div>
+			</div>
+			<div id="core4_desc">
+				<div></div>
+				<div></div>
+			</div>
+			<div id="core5_desc">
+				<div></div>
+				<div></div>
+			</div>
+			<div class="core_values" style="float: left; margin: 6px;">
+				<img src="images/about_lwit/pastoralteam.png" height=""/><br />
+				<div>
+					<div class="pastoral_container"><div class='core_img aang'></div><div class="pastoral_name">Anthony Ang</div><div class="assignment">overseer</div></div>
+					<div class="pastoral_container"><div class='core_img nshan'></div><div class="pastoral_name">Nick Shan</div><div class="assignment">elder</div></div>
+					<div class="pastoral_container"><div class='core_img nsy'></div><div class="pastoral_name">Nic Sy</div><div class="assignment">senior pastor</div></div>
+					<div class="pastoral_container"><div class='core_img jchua'></div><div class="pastoral_name">Jojo Chua</div><div class="assignment">young pro pastor</div></div>
+					<div class="pastoral_container"><div class='core_img jaguhob'></div><div class="pastoral_name">Jasper Aguhob</div><div class="assignment">youth pastor</div></div>
 				</div>
 			</div>
 		</div>

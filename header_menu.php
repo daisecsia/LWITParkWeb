@@ -34,7 +34,7 @@
                 <li <?php echo $menu_id == 'involve' ? "class='active'" : ""; ?>><a>Get Involved</a>
                     <ul class="menu_involve">
                         <li><a href="ministry.php" title="serve with us"><span class="icon ministry"></span>Ministry List</a></li>
-                        <li><a href="small_group.php" title="grow with us"><span class="icon small_group"></span>Small Groups</a></li>
+                        <li><a href="small_group.php" title="grow with us"><span class="icon small_group"></span>Make Disciples Groups</a></li>
                         <li><a href="schedule.php"><span class="icon activities"></span>Activities</a></li>
                     </ul>
                 </li>
@@ -42,14 +42,14 @@
                     <ul>
                         <li><a href="download_sermon.php" title="listen or download recorded audio sermon"><span class="icon audio"></span>Audio Sermon</a></li>
                         <li><a href="#"><span class="icon handout"></span>Sermon Handouts</a></li>
-                        <li><a href="article.php" title="supplementary materials for your growth"><span class="icon e_resource"></span>E-Materials</a></li>
+                        <li><a href="article.php" title="supplementary materials for your growth"><span class="icon e_resource"></span>Pastoral Page</a></li>
                         <li><a href="#"><span class="icon lit"></span>LIT Express</a></li>
                         <li><a href="#"><span class="icon gallery"></span>Gallery</a></li>
                     </ul>
                 </li>
                 <?php
-                if($_SESSION['access_right']=='1')
-				{ ?>
+                //if($_SESSION['access_right']=='1')
+				//{ ?>
                 <li <?php echo $menu_id == 'admin' ? "class='active'" : ""; ?>><a href="#">Admin Pages</a>
                 	<ul>
                         <li><a href="#"><span class="icon report"></span>Small Group Report</a></li>
@@ -60,7 +60,7 @@
                         <li><a href="#"><span class="icon elem0"></span>Extract Report</a></li>
                     </ul>
                </li>
-               <?php } ?>
+               <?php //} ?>
             </ul>
         </nav>
         <!-- search form 

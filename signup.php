@@ -128,8 +128,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 
 			if(dbc_query($query))
 					$user_save=1;
-			//$subscribe_result = dbc_query("INSERT INTO subscription (email, subscribed_date) VALUES ('".$field->value('u_email')."','".date("Y-m-d")."')");
-			echo $user_save;
+
 			if($user_save)// && $subscribe_result)
 			{
 				$result_msg = "your account has been created. Start now";

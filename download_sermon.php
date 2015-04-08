@@ -4,7 +4,7 @@ $page_title = "Listen to Audio Sermons";
 include_once('header_page.php');
 include_once('util/form_util_inc.php');
 
-$limit = 4;
+$limit = 12;
 $page_no = get('page', 10)=='' ? 0: get('page',10) ;
 $order_by = get('sort_by',10)=='' ? 'date' : get('sort_by',10);
 $start = $page_no * $limit;

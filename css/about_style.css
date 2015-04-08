@@ -23,14 +23,16 @@
 }
 
 .core_values{
-	margin: 15px;
+	margin: 0px 15px;
+	width: 1000px;
 }
 
 .core_img{
 	width: 150px;
-	height: 180px;
+	height: 160px;
 	margin: 10px;	
 	float: left;
+	z-index: 1;
 }
 
 .core_img.core1{background: url('../images/about_lwit/core1.png') no-repeat; background-size: 100%;}
@@ -38,6 +40,43 @@
 .core_img.core3{background: url('../images/about_lwit/core3.png') no-repeat; background-size: 100%;}
 .core_img.core4{background: url('../images/about_lwit/core4.png') no-repeat; background-size: 100%;}
 .core_img.core5{background: url('../images/about_lwit/core5.png') no-repeat; background-size: 100%;}
+
+
+.coredesc{
+	width: 800px;
+	height: 300px;
+	margin: 0px auto;
+	float: left;
+	display: none;
+}
+
+.prayer{background: url('../images/about_lwit/Can-We-Pray-For-You.png') no-repeat;background-size: 100%; height: 100%;}
+.coredesc.holyspirit{background: url('../images/about_lwit/core2.png') no-repeat; background-size: 100%;}
+.coredesc.gifts{background: url('../images/about_lwit/core3.png') no-repeat; background-size: 100%;}
+.coredesc.giving{background: url('../images/about_lwit/core4.png') no-repeat; background-size: 100%;}
+.coredesc.discipleship{background: url('../images/about_lwit/core5.png') no-repeat; background-size: 100%;}
+
+.pastoral_container{
+	float: left;
+}
+
+.pastoral_name{
+	margin: 0px auto;
+	text-align: center;
+	text-decoration: underline;
+	font-weight: bold; 
+}
+
+.assignment{
+	margin: 0px auto;
+	text-align: center;
+	font-style: italic;
+}
+.core_img.aang{background: url('../images/about_lwit/aang.jpg') no-repeat; background-size: 100%;}
+.core_img.nshan{background: url('../images/about_lwit/nshan.jpg') no-repeat; background-size: 100%;}
+.core_img.nsy{background: url('../images/about_lwit/nsy.jpg') no-repeat; background-size: 100%;}
+.core_img.jchua{background: url('../images/about_lwit/jchua.jpg') no-repeat; background-size: 100%;}
+.core_img.jaguhob{background: url('../images/about_lwit/jaguhob.jpg') no-repeat; background-size: 100%;}
 
 .about_list{
 	float: left;

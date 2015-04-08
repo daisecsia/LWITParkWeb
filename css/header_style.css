@@ -104,6 +104,10 @@ nav{
     /*padding-bottom: 12px;*/
 }
 
+#menu ul li ul li a[title='grow with us']{
+    font-size: 13px;
+}
+
 #menu ul li ul li a{
     font-size: 14px;
 }

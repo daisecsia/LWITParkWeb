@@ -32,12 +32,6 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 }
 ?> 
 	<div class="upper_footer">
-		<?php 
-			echo DBC_HOST;
-			echo DBC_USER;
-			echo DBC_PASSWORD;
-			echo DBC_NAME;
-		?>
 		<!--
 		<div class="subscribe_wrapper" style="position: relative;  float: left;">
 			<!-- <h3>Spread the word. SHARE TO A FRIEND OR SOMEONE YOU KNOW.</h3>
